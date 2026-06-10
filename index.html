@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Franquia NexFarm 3D · Imprimindo o seu futuro — Edição ABF 2026</title>
+<meta name="description" content="Seja dono de uma fábrica de impressão 3D. Modelo de franquia completo: máquinas, sistema Manage Farm, Academy, mentoria e a rede inteira com você. Condição exclusiva da ABF Franchising Expo 2026." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#040C22; --bg2:#07152c; --bg3:#020912;
+    --cyan:#00CBF7; --blue:#0098D5; --cyan-soft:#5fe0ff;
+    --text:#eaf2f9; --muted:#9fb3c7; --muted2:#6b8099;
+    --line:rgba(0,203,247,.16); --line2:rgba(255,255,255,.07);
+    --panel:rgba(255,255,255,.035); --panel2:rgba(255,255,255,.06);
+    --green:#34e29b; --red:#ff6b6b;
+    --display:'Space Grotesk',sans-serif; --body:'Satoshi',sans-serif;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg); color:var(--text); font-family:var(--body);
+    -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.55;
+  }
+  /* grain */
+  body::after{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:9999; opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .display{font-family:var(--display);letter-spacing:-.02em;line-height:1.04}
+  .eyebrow{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan)}
+  .grad{background:linear-gradient(90deg,var(--cyan),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;pointer-events:none;z-index:0}
+
+  /* NAV */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:.35s}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between}
+  .nav.scrolled{background:rgba(4,12,34,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line2)}
+  .nav-logo{height:30px}
+  .nav-cta{font-family:var(--display);font-weight:600;font-size:14px;padding:11px 20px;border-radius:100px;
+    background:linear-gradient(90deg,var(--blue),var(--cyan));color:#031018;transition:.25s;white-space:nowrap}
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,203,247,.35)}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a.lk{font-size:14px;color:var(--muted);font-weight:500;transition:.2s}
+  .nav-links a.lk:hover{color:var(--text)}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:140px 0 90px;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0;background:#04101f}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.42}
+  .hero-bg::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,var(--bg) 8%,rgba(4,12,34,.72) 48%,rgba(4,12,34,.35) 100%),
+               linear-gradient(0deg,var(--bg) 4%,transparent 38%,transparent 70%,rgba(4,12,34,.6) 100%)}
+  .hero .wrap{position:relative;z-index:2}
+  .hero-product{position:absolute;right:-1%;bottom:-3%;width:min(44vw,560px);z-index:1;pointer-events:none;
+    -webkit-mask-image:radial-gradient(125% 115% at 58% 48%,#000 52%,transparent 90%);
+    mask-image:radial-gradient(125% 115% at 58% 48%,#000 52%,transparent 90%);
+    filter:drop-shadow(0 30px 70px rgba(0,0,0,.55))}
+  @media(max-width:1100px){.hero-product{display:none}}
+  .hero-badge{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border:1px solid var(--line);
+    border-radius:100px;background:rgba(0,203,247,.06);font-size:12.5px;font-weight:600;color:var(--cyan-soft);
+    font-family:var(--display);letter-spacing:.04em;margin-bottom:30px}
+  .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+  .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,7vw,82px);line-height:.98;letter-spacing:-.03em;max-width:14ch}
+  .hero h1 .grad{display:inline-block}
+  .hero-tag{font-family:var(--display);font-weight:500;font-size:clamp(16px,2.4vw,24px);color:var(--cyan);margin-top:22px;letter-spacing:.01em}
+  .hero p.sub{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:54ch;margin-top:20px}
+  .hero-cta{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap}
+  .btn{font-family:var(--display);font-weight:600;font-size:15.5px;padding:16px 30px;border-radius:100px;transition:.25s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:10px}
+  .btn-pri{background:linear-gradient(90deg,var(--blue),var(--cyan));color:#031018}
+  .btn-pri:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,203,247,.4)}
+  .btn-sec{background:rgba(255,255,255,.05);color:var(--text);border:1px solid var(--line2)}
+  .btn-sec:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+  .hero-stats{display:flex;gap:40px;margin-top:54px;flex-wrap:wrap}
+  .hero-stats .st b{font-family:var(--display);font-size:30px;font-weight:700;color:#fff;display:block;line-height:1}
+  .hero-stats .st span{font-size:13px;color:var(--muted2);letter-spacing:.02em}
+
+  /* SECTION SHELL */
+  section{position:relative;padding:96px 0;overflow:hidden;scroll-margin-top:84px}
+  .sec-kicker{text-align:center;margin-bottom:14px}
+  .sec-title{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.3vw,46px);text-align:center;line-height:1.05;letter-spacing:-.02em;max-width:18ch;margin:0 auto}
+  .sec-sub{text-align:center;color:var(--muted);font-size:clamp(15px,1.7vw,18px);max-width:60ch;margin:18px auto 0}
+
+  /* PROMISE BAND */
+  .promise{padding:70px 0;background:
+     radial-gradient(900px 300px at 50% 0%,rgba(0,152,213,.16),transparent 70%);
+     border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)}
+  .promise .big{font-family:var(--display);font-weight:700;font-size:clamp(30px,5.2vw,60px);text-align:center;line-height:1.02;letter-spacing:-.02em}
+  .promise .small{text-align:center;color:var(--muted);margin-top:18px;font-size:17px}
+
+  /* PITCH */
+  .pitch-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+  .pitch-grid h2{font-family:var(--display);font-weight:700;font-size:clamp(26px,3.6vw,40px);line-height:1.08;letter-spacing:-.02em}
+  .pitch-grid p{color:var(--muted);font-size:17px;margin-top:20px}
+  .pitch-card{background:var(--panel);border:1px solid var(--line2);border-radius:20px;padding:28px;margin-top:22px}
+  .pitch-card .lbl{font-family:var(--display);font-weight:600;font-size:12.5px;letter-spacing:.12em;color:var(--cyan);text-transform:uppercase}
+  .pitch-card p{margin-top:10px;color:var(--text);font-size:16px}
+  .pitch-visual{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);min-height:380px;background:var(--bg3)}
+  .pitch-visual img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:.92}
+  .pitch-visual .cap{position:absolute;left:0;right:0;bottom:0;padding:22px;z-index:2;
+    background:linear-gradient(0deg,rgba(4,12,34,.95),transparent);font-family:var(--display);font-weight:600;font-size:15px}
+
+  /* BENEFITS */
+  .ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:54px}
+  .ben{background:var(--panel);border:1px solid var(--line2);border-radius:20px;padding:26px;transition:.3s;position:relative;overflow:hidden}
+  .ben:hover{transform:translateY(-6px);border-color:var(--line);background:var(--panel2)}
+  .ben .ic{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;margin-bottom:18px;
+    background:linear-gradient(135deg,var(--blue),var(--cyan))}
+  .ben .ic svg{width:24px;height:24px;stroke:#031018;stroke-width:2;fill:none}
+  .ben h3{font-family:var(--display);font-weight:600;font-size:18.5px;letter-spacing:-.01em}
+  .ben p{color:var(--muted);font-size:14.5px;margin-top:9px}
+  .ben.wide{grid-column:span 3;display:flex;align-items:center;gap:24px;background:linear-gradient(100deg,rgba(0,152,213,.12),rgba(0,203,247,.05))}
+  .ben.wide .ic{margin-bottom:0;flex-shrink:0}
+  .ben.wide h3{font-size:19px}
+
+  /* PLANS */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px;align-items:stretch}
+  .plan{background:var(--panel);border:1px solid var(--line2);border-radius:22px;padding:32px 28px;position:relative;display:flex;flex-direction:column;transition:.3s}
+  .plan:hover{transform:translateY(-6px);border-color:var(--line)}
+  .plan.pop{background:linear-gradient(180deg,rgba(0,203,247,.1),rgba(0,152,213,.03));border:1.5px solid var(--cyan);box-shadow:0 24px 70px rgba(0,203,247,.18)}
+  .plan .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,var(--blue),var(--cyan));color:#031018;font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.1em;padding:6px 16px;border-radius:100px;text-transform:uppercase}
+  .plan .pname{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan)}
+  .plan .pinv{font-family:var(--display);font-weight:700;font-size:40px;margin-top:14px;line-height:1}
+  .plan .pinv small{font-size:14px;color:var(--muted);font-weight:500;display:block;margin-bottom:3px;letter-spacing:0}
+  .plan .pinv .de2{display:block;font-family:var(--display);font-size:15px;font-weight:600;color:var(--muted2);text-decoration:line-through;text-decoration-color:var(--red);margin-bottom:2px;letter-spacing:0}
+  .plan ul li b s{color:var(--muted2);text-decoration-color:var(--red);font-weight:500;margin-right:5px}
+  .plan .pmac{margin-top:14px;font-size:15px;color:var(--text);font-weight:600}
+  .plan .pfat{margin-top:14px;padding:12px 15px;border-radius:13px;background:rgba(0,203,247,.07);border:1px solid var(--line);font-size:13px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .plan .pfat b{font-family:var(--display);color:var(--cyan);font-size:17px;font-weight:700;white-space:nowrap}
+  .plan.pop .pfat{background:rgba(0,203,247,.12)}
+  .plan ul{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:13px;flex:1}
+  .plan ul li{display:flex;justify-content:space-between;gap:14px;font-size:14.5px;color:var(--muted);border-bottom:1px solid var(--line2);padding-bottom:12px}
+  .plan ul li b{color:var(--text);font-weight:600;text-align:right}
+  .plan .pbtn{margin-top:24px;text-align:center;font-family:var(--display);font-weight:600;font-size:15px;padding:14px;border-radius:100px;transition:.25s}
+  .plan .pbtn.pri{background:linear-gradient(90deg,var(--blue),var(--cyan));color:#031018}
+  .plan .pbtn.sec{background:rgba(255,255,255,.05);border:1px solid var(--line2);color:var(--text)}
+  .plan:hover .pbtn{transform:translateY(-2px)}
+  .plan-note{text-align:center;color:var(--muted2);font-size:13.5px;margin-top:26px}
+
+  /* COMPARISON TABLE */
+  .cmp{margin-top:30px;border:1px solid var(--line2);border-radius:22px;overflow:hidden;background:var(--panel)}
+  .cmp table{width:100%;border-collapse:collapse;font-size:15px}
+  .cmp th,.cmp td{padding:16px 20px;text-align:center;border-bottom:1px solid var(--line2)}
+  .cmp thead th{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase;background:rgba(0,203,247,.05)}
+  .cmp thead th.lbl,.cmp td.lbl{text-align:left;color:var(--muted);font-weight:500;text-transform:none;letter-spacing:0;background:transparent}
+  .cmp thead th.pro{color:var(--cyan)}
+  .cmp tbody td{color:var(--text);font-weight:600}
+  .cmp tbody tr:last-child td{border-bottom:none}
+  .cmp col.cpro{background:rgba(0,203,247,.05)}
+
+  /* ABF CONDITION */
+  .abf{background:radial-gradient(800px 360px at 78% 0%,rgba(0,203,247,.14),transparent 65%)}
+  .abf-card{position:relative;border:1.5px solid var(--cyan);border-radius:26px;overflow:hidden;
+    background:linear-gradient(120deg,rgba(7,21,44,.9),rgba(4,12,34,.7));padding:46px 44px;
+    display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+  .abf-card .sp{position:absolute;width:340px;height:340px;right:-40px;top:50%;transform:translateY(-50%);
+    background:radial-gradient(circle,rgba(0,203,247,.22),transparent 65%);filter:blur(20px);pointer-events:none}
+  .abf-card .lbl{font-family:var(--display);font-weight:700;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan)}
+  .abf-card h2{font-family:var(--display);font-weight:700;font-size:clamp(26px,3.5vw,38px);line-height:1.08;margin-top:14px}
+  .abf-card p{color:var(--muted);margin-top:14px;font-size:16px;max-width:42ch}
+  .abf-price{position:relative;z-index:2;text-align:center;background:var(--bg3);border:1px solid var(--line);border-radius:20px;padding:30px}
+  .abf-price .k{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-family:var(--display);font-weight:600}
+  .abf-price .de{color:var(--muted2);text-decoration:line-through;text-decoration-color:var(--red);font-size:18px;margin-top:12px;font-family:var(--display)}
+  .abf-price .por{font-family:var(--display);font-weight:700;font-size:54px;color:var(--cyan);line-height:1;margin-top:4px}
+  .abf-price .eco{display:inline-block;margin-top:14px;background:linear-gradient(90deg,var(--blue),var(--cyan));color:#031018;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.06em;padding:6px 14px;border-radius:100px}
+
+  /* STEPS */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:54px}
+  .step{background:var(--panel);border:1px solid var(--line2);border-radius:18px;padding:26px;transition:.3s}
+  .step:hover{transform:translateY(-5px);border-color:var(--line)}
+  .step .n{font-family:var(--display);font-weight:700;font-size:34px;color:var(--cyan);line-height:1}
+  .step h3{font-family:var(--display);font-weight:600;font-size:17px;margin-top:14px}
+  .step p{color:var(--muted);font-size:14px;margin-top:8px}
+
+  /* FINAL CTA */
+  .final{padding:110px 0}
+  .final-card{position:relative;border-radius:30px;overflow:hidden;padding:70px 50px;text-align:center;
+    background:linear-gradient(120deg,var(--blue),var(--cyan))}
+  .final-card::before{content:"";position:absolute;inset:0;opacity:.12;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 20h40M20 0v40' stroke='%23031018' stroke-width='1'/%3E%3C/svg%3E")}
+  .final-card .ft{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.6vw,52px);color:#03141f;line-height:1.04;position:relative;letter-spacing:-.02em}
+  .final-card p{color:#042634;margin-top:18px;font-size:18px;position:relative;font-weight:500}
+  .final-card .fbtn{display:inline-flex;margin-top:32px;background:#04101f;color:#fff;font-family:var(--display);font-weight:600;font-size:16px;padding:17px 38px;border-radius:100px;position:relative;transition:.25s}
+  .final-card .fbtn:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.3)}
+  .final-tag{text-align:center;font-family:var(--display);font-weight:700;font-size:clamp(22px,3vw,32px);margin-top:54px}
+  .final-tag .grad{font-style:italic}
+
+  /* FOOTER */
+  footer.ft{border-top:1px solid var(--line2);padding:48px 0 60px}
+  .ft-grid{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+  .ft-grid img{height:30px;opacity:.9}
+  .ft-grid .meta{color:var(--muted2);font-size:13.5px;text-align:right}
+  .ft-abf{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:12px;padding:9px 14px;background:rgba(0,203,247,.04)}
+  .ft-abf .b1{font-family:var(--display);font-weight:700;font-size:17px;color:var(--cyan);letter-spacing:.04em}
+  .ft-abf .b2{font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;line-height:1.2}
+
+  /* ABF badge lockup (placeholder até logo oficial) */
+  .abf-lockup{display:inline-flex;align-items:center;gap:11px}
+  .abf-lockup .mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;font-family:var(--display);font-weight:700;color:#03141f;font-size:14px;letter-spacing:-.02em}
+  .abf-lockup .txt b{font-family:var(--display);font-weight:700;font-size:15px;display:block;line-height:1}
+  .abf-lockup .txt span{font-size:10.5px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(28px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.4s}
+
+  /* RESPONSIVE */
+  @media(max-width:980px){
+    .pitch-grid{grid-template-columns:1fr;gap:34px}
+    .ben-grid{grid-template-columns:repeat(2,1fr)}
+    .ben.wide{grid-column:span 2;flex-direction:column;text-align:center;align-items:center}
+    .plans{grid-template-columns:1fr;max-width:440px;margin-left:auto;margin-right:auto}
+    .plan.pop{order:-1}
+    .abf-card{grid-template-columns:1fr;gap:28px}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .nav-links a.lk{display:none}
+    .cmp{overflow-x:auto}.cmp table{min-width:560px}
+  }
+  @media(max-width:560px){
+    .wrap{padding:0 20px}
+    section{padding:70px 0}
+    .ben-grid{grid-template-columns:1fr}.ben.wide{grid-column:span 1}
+    .steps{grid-template-columns:1fr}
+    .hero-stats{gap:26px}
+    .abf-card{padding:32px 24px}
+    .final-card{padding:48px 26px}
+    .nav-cta{padding:9px 15px;font-size:13px}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <img src="assets/logo-nexfarm.png" class="nav-logo" alt="NexFarm 3D" />
+    <nav class="nav-links">
+      <a class="lk" href="#oportunidade">Oportunidade</a>
+      <a class="lk" href="#recebe">O que você recebe</a>
+      <a class="lk" href="#planos">Planos</a>
+      <a class="nav-cta" href="#cta">Quero minha franquia</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"><img src="assets/farm-hero.jpg" alt="Farm de impressão 3D NexFarm" /></div>
+  <img src="assets/printer.jpg" class="hero-product" alt="Impressora 3D Bambu Lab A1 Combo com unidade de filamento" />
+  <div class="wrap">
+    <div class="hero-badge reveal in"><span class="dot"></span> EDIÇÃO ABF FRANCHISING EXPO 2026 · 24–27 JUN · SP</div>
+    <h1 class="reveal in">Seja dono de uma <span class="grad">fábrica de impressão 3D.</span></h1>
+    <div class="hero-tag reveal in d1">Imprimindo o seu futuro.</div>
+    <p class="sub reveal in d2">Modelo de franquia completo: máquinas, sistema, treinamento e uma rede inteira te puxando. Você liga as impressoras e começa a faturar.</p>
+    <div class="hero-cta reveal in d3">
+      <a class="btn btn-pri" href="#planos">Ver os planos →</a>
+      <a class="btn btn-sec" href="#recebe">O que você recebe</a>
+    </div>
+    <div class="hero-stats reveal in d4">
+      <div class="st"><b>1ª</b><span>rede de Print Farms 3D do Brasil</span></div>
+      <div class="st"><b>40 dias</b><span>do investimento ao faturamento</span></div>
+      <div class="st"><b>70–85%</b><span>de margem média por peça</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE -->
+<section class="promise">
+  <div class="wrap">
+    <div class="big reveal">Em <span class="grad">40 dias</span>, sua farm pode estar faturando.</div>
+    <div class="small reveal d1">O caminho é curto e a NexFarm anda ele com você — do setup à primeira venda.</div>
+  </div>
+</section>
+
+<!-- OPORTUNIDADE -->
+<section id="oportunidade">
+  <div class="wrap">
+    <div class="pitch-grid">
+      <div>
+        <div class="eyebrow reveal">A oportunidade</div>
+        <h2 class="reveal d1">A impressão 3D parou de ser hobby. Virou negócio.</h2>
+        <p class="reveal d2">Toda cidade precisa de peças, protótipos, brindes e reposição sob demanda — rápido e perto. A procura existe. Falta quem produza.</p>
+        <div class="pitch-card reveal d3">
+          <div class="lbl">A parte difícil — que você não precisa encarar</div>
+          <p>Montar uma farm sozinho é caro e arriscado: máquina errada, sem fornecedor, sem sistema, sem saber precificar e sem cliente. A maioria desiste antes de faturar o primeiro real.</p>
+        </div>
+        <div class="pitch-card reveal d4" style="border-color:var(--line);background:linear-gradient(100deg,rgba(0,152,213,.12),transparent)">
+          <div class="lbl">A solução</div>
+          <p><b>A NexFarm existe pra você pular essa parte.</b> Você entra num modelo testado, com tudo pronto pra operar e vender desde o dia 1.</p>
+        </div>
+      </div>
+      <div class="pitch-visual reveal d2">
+        <img src="assets/printers-trio.jpg" alt="Impressoras 3D NexFarm operando" />
+        <div class="cap">Operação enxuta: uma sala, suas máquinas e um sistema. Custo baixo, margem alta.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE RECEBE -->
+<section id="recebe" style="background:linear-gradient(180deg,transparent,rgba(7,21,44,.5),transparent)">
+  <div class="wrap">
+    <div class="sec-kicker eyebrow reveal">O modelo de negócio pronto</div>
+    <h2 class="sec-title reveal d1">Você não compra máquinas.<br/>Entra num modelo que já funciona.</h2>
+    <p class="sec-sub reveal d2">Tudo que uma farm precisa pra operar e vender — entregue, instalado e ensinado. Em qualquer plano.</p>
+    <div class="ben-grid">
+      <div class="ben reveal d1">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="11" rx="2"/><path d="M8 7V5h8v2M9 14h6"/></svg></div>
+        <h3>Máquinas + filamento</h3>
+        <p>Suas impressoras Bambu Lab A1 Combo e o estoque de filamento pra começar a produzir já.</p>
+      </div>
+      <div class="ben reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Manage Farm (FM 3D)</h3>
+        <p>O sistema que comanda tudo: pedidos, precificação automática e relatórios num clique. Feito pra farm.</p>
+      </div>
+      <div class="ben reveal d3">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 4 2 9l10 5 10-5-10-5zM6 11v5c0 1 3 2.5 6 2.5S18 17 18 16v-5"/></svg></div>
+        <h3>NexFarm Academy</h3>
+        <p>Aulas do zero ao avançado. Você aprende a operar a farm e a vender todo santo dia.</p>
+      </div>
+      <div class="ben reveal d1">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4M12 13v4"/></svg></div>
+        <h3>Mentoria toda quinta</h3>
+        <p>Ao vivo, toda semana, com quem já fatura com farm 3D. Você nunca trava sozinho.</p>
+      </div>
+      <div class="ben reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H7l-3 3V5z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></div>
+        <h3>Assistência da rede</h3>
+        <p>Suporte técnico e comercial sempre que precisar. A estrutura inteira atrás de você.</p>
+      </div>
+      <div class="ben reveal d3">
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M15 20c0-2 .5-3 2-3.5"/></svg></div>
+        <h3>Grupo de franqueados</h3>
+        <p>Uma comunidade que troca pedido, indica cliente e cresce junto. Ninguém empreende sozinho.</p>
+      </div>
+      <div class="ben wide reveal d4">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 6.9H22l-6 4.4 2.3 7-6.3-4.6L5.7 20.3 8 13.3 2 8.9h7.6z"/></svg></div>
+        <div>
+          <h3>Preço de franqueado em máquinas e filamento</h3>
+          <p>Comprando pela rede, você adquire impressoras e matéria-prima por um valor menor — e protege sua margem desde a primeira peça.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section id="planos">
+  <div class="wrap">
+    <div class="sec-kicker eyebrow reveal">Escolha o seu tamanho</div>
+    <h2 class="sec-title reveal d1">3 planos. Você decide a potência da sua farm.</h2>
+    <p class="sec-sub reveal d2">O que muda entre eles é a quantidade de máquinas — e o quanto você pode faturar. O modelo, o sistema e o suporte são os mesmos pra todo mundo.</p>
+
+    <div class="plans">
+      <div class="plan reveal d1">
+        <div class="pname">Stand</div>
+        <div class="pinv"><small>investimento na feira</small><span class="de2">de R$ 45.000</span>R$ 40.000</div>
+        <div class="pmac">4 impressoras Bambu Lab A1 Combo</div>
+        <div class="pfat">Faturamento esperado <b>R$ 8.000/mês</b></div>
+        <ul>
+          <li>Impressoras A1 Combo <b>4 un · R$ 18.800</b></li>
+          <li>Filamento <b>60 kg · R$ 6.200</b></li>
+          <li>Manage Farm (FM 3D) <b>3 meses grátis</b></li>
+          <li>Taxa de franquia <b><s>R$ 20.000</s>R$ 15.000</b></li>
+        </ul>
+        <a class="pbtn sec" href="#cta">Quero o Stand</a>
+      </div>
+
+      <div class="plan pop reveal d2">
+        <div class="tag">Mais escolhido</div>
+        <div class="pname">Pro</div>
+        <div class="pinv"><small>investimento na feira</small><span class="de2">de R$ 70.000</span>R$ 65.000</div>
+        <div class="pmac">8 impressoras Bambu Lab A1 Combo</div>
+        <div class="pfat">Faturamento esperado <b>R$ 16.000/mês</b></div>
+        <ul>
+          <li>Impressoras A1 Combo <b>8 un · R$ 37.600</b></li>
+          <li>Filamento <b>120 kg · R$ 12.400</b></li>
+          <li>Manage Farm (FM 3D) <b>6 meses grátis</b></li>
+          <li>Taxa de franquia <b><s>R$ 20.000</s>R$ 15.000</b></li>
+        </ul>
+        <a class="pbtn pri" href="#cta">Quero o Pro</a>
+      </div>
+
+      <div class="plan reveal d3">
+        <div class="pname">Ultra</div>
+        <div class="pinv"><small>investimento na feira</small><span class="de2">de R$ 95.000</span>R$ 90.000</div>
+        <div class="pmac">12 impressoras Bambu Lab A1 Combo</div>
+        <div class="pfat">Faturamento esperado <b>R$ 24.000/mês</b></div>
+        <ul>
+          <li>Impressoras A1 Combo <b>12 un · R$ 56.400</b></li>
+          <li>Filamento <b>180 kg · R$ 18.600</b></li>
+          <li>Manage Farm (FM 3D) <b>12 meses grátis</b></li>
+          <li>Taxa de franquia <b><s>R$ 20.000</s>R$ 15.000</b></li>
+        </ul>
+        <a class="pbtn sec" href="#cta">Quero o Ultra</a>
+      </div>
+    </div>
+    <div class="plan-note reveal">Em todos os planos a taxa de franquia sai de R$ 20.000 por R$ 15.000 durante a ABF. Expectativa de faturamento com base na operação da rede — resultados variam conforme dedicação, região e mix de produtos.</div>
+
+    <!-- COMPARISON -->
+    <div style="margin-top:64px">
+      <div class="sec-kicker eyebrow reveal">O que vem em cada plano</div>
+      <h2 class="sec-title reveal d1" style="font-size:clamp(24px,3.4vw,36px)">Comparativo dos planos</h2>
+      <div class="cmp reveal d2">
+        <table>
+          <colgroup><col/><col/><col class="cpro"/><col/></colgroup>
+          <thead>
+            <tr><th class="lbl"></th><th>Stand</th><th class="pro">Pro</th><th>Ultra</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="lbl">Impressoras A1 Combo</td><td>4 · R$ 18.800</td><td>8 · R$ 37.600</td><td>12 · R$ 56.400</td></tr>
+            <tr><td class="lbl">Filamento</td><td>60 kg · R$ 6.200</td><td>120 kg · R$ 12.400</td><td>180 kg · R$ 18.600</td></tr>
+            <tr><td class="lbl">Manage Farm (FM 3D)</td><td>3 meses grátis</td><td>6 meses grátis</td><td>12 meses grátis</td></tr>
+            <tr><td class="lbl">Taxa de franquia · ABF</td><td>de 20k → R$ 15.000</td><td>de 20k → R$ 15.000</td><td>de 20k → R$ 15.000</td></tr>
+            <tr><td class="lbl">Investimento total</td><td><b style="color:var(--cyan)">R$ 40.000</b></td><td><b style="color:var(--cyan)">R$ 65.000</b></td><td><b style="color:var(--cyan)">R$ 90.000</b></td></tr>
+            <tr><td class="lbl">Faturamento esperado/mês</td><td>R$ 8.000</td><td>R$ 16.000</td><td>R$ 24.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONDIÇÃO ABF -->
+<section class="abf">
+  <div class="wrap">
+    <div class="abf-card reveal">
+      <div class="sp"></div>
+      <div style="position:relative;z-index:2">
+        <div class="lbl">Condição que só existe dentro da ABF</div>
+        <h2>Fechou no estande?<br/>A taxa de franquia <span class="grad">despenca</span>.</h2>
+        <p>Em qualquer plano, quem assina o contrato durante a feira leva a taxa de franquia com R$ 5.000 de desconto. Acabou a ABF no dia 27, acabou a condição.</p>
+      </div>
+      <div class="abf-price">
+        <div class="k">Taxa de franquia · na feira</div>
+        <div class="de">de R$ 20.000</div>
+        <div class="por">R$ 15.000</div>
+        <div class="eco">VOCÊ ECONOMIZA R$ 5.000</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como">
+  <div class="wrap">
+    <div class="sec-kicker eyebrow reveal">Comece agora</div>
+    <h2 class="sec-title reveal d1">Do estande à sua farm rodando</h2>
+    <div class="steps">
+      <div class="step reveal d1"><div class="n">01</div><h3>Garanta a condição</h3><p>Escolha seu plano e feche no estande, durante os 4 dias da ABF.</p></div>
+      <div class="step reveal d2"><div class="n">02</div><h3>Receba o kit</h3><p>Máquinas, filamento e o sistema Manage Farm na sua mão.</p></div>
+      <div class="step reveal d3"><div class="n">03</div><h3>Treine na Academy</h3><p>Aulas + mentoria de quinta pra operar e vender com segurança.</p></div>
+      <div class="step reveal d4"><div class="n">04</div><h3>Comece a faturar</h3><p>Sua farm rodando, com a rede inteira no seu suporte.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="cta">
+  <div class="wrap">
+    <div class="final-card reveal">
+      <div class="ft">Sua print farm começa<br/>aqui na feira.</div>
+      <p>Procure o time NexFarm 3D no estande, escolha seu plano e feche com a condição exclusiva da ABF.</p>
+      <a class="fbtn" href="#planos">Quero ser franqueado NexFarm →</a>
+    </div>
+    <div class="final-tag reveal d1">NexFarm 3D — <span class="grad">Imprimindo o seu futuro.</span></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ft">
+  <div class="wrap ft-grid">
+    <img src="assets/logo-nexfarm.png" alt="NexFarm 3D" />
+    <div class="ft-abf">
+      <div class="abf-lockup">
+        <div class="mark">ABF</div>
+        <div class="txt"><b>Franchising Expo</b><span>24–27 jun 2026 · São Paulo</span></div>
+      </div>
+    </div>
+    <div class="meta">
+      A 1ª rede de Print Farms 3D do Brasil<br/>
+      Condição válida só durante a ABF Franchising Expo 2026 · Expo Center Norte · SP
+    </div>
+  </div>
+</footer>
+
+<script>
+  // nav scroll state
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40)});
+  // reveal on scroll
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
